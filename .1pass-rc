@@ -1,0 +1,14 @@
+
+defn opa op account get
+defn opal op account list
+defn opvl op vault list
+defn opig op item get
+op_read() {
+  local last="${@: -1}"
+  set -- "${@:1:$(($#-1))}"
+  if [ "${last:0:3}" != "op://" ]; then
+    last="op://$last"
+  fi
+  op read "$@" "$last"
+}
+defn opr op_read
