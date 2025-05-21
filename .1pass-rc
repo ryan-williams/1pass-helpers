@@ -1,7 +1,8 @@
-
 defn opa op account get
 defn opal op account list
+defn oal op account list
 defn opvl op vault list
+defn ovl op vault list
 defn opig op item get
 op_read() {
   local last="${@: -1}"
@@ -12,3 +13,7 @@ op_read() {
   op read "$@" "$last"
 }
 defn opr op_read
+
+defn opil op item list
+
+export OP_FORMAT=json
